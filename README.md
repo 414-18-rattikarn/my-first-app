@@ -1,0 +1,219 @@
+กำาหนดค่าเริ่มต้นใน session
+state ถ้ายังไม่มี
+
+if "ans1
+val" not in st.session
+state:
+
+
+st.session
+state.ans1
+val = ""
+
+
+if "ans2
+val" not in st.session
+state:
+
+
+st.session
+state.ans2
+val = ""
+ กำาหนดค่าเริ่มต ้ นใน session
+state ถ ้ ายังไม่มี
+
+if "ans1
+val" not in st.session
+state:
+
+
+st.session
+state.ans1
+val = ""
+
+
+if "ans2
+val" not in st.session
+state:
+
+
+st.session
+state.ans2
+val = ""
+
+
+# 📌 ฟังก์ชันเคลียร์ค่าเมื่อกดปุ ่ มเริ่มใหม่
+def reset
+_game():
+st.session
+state.ans1
+val = "" # เคลียร์ค่าช่องข ้ อ 1
+
+
+st.session
+state.ans2
+val = "" # เคลียร์ค่าช่องข ้ อ 2
+
+
+st.session
+
+state.start = time.time() # เริ่มเวลาใหม่
+st.session
+state.is
+
+
+ended = False # ปิด Dialog
+# ----------------------------------------------------
+# 📌 ฟังก์ชัน MessageBox (Dialog)
+# ----------------------------------------------------
+@st.dialog("
+📊 สรุปผลการเล่นเกม")
+def show
+result
+
+
+dialog(ans1, ans2):
+st.balloons()
+score = 0
+u
+
+ans1 = ans1.strip().lower()
+u
+
+ans2 = ans2.strip().lower()
+# ตรวจข ้ อ 1
+if u
+
+ans1 == "apple":
+st.success("✅ ข ้ อ 1: ถูกต ้ อง")
+score += 1
+else:
+st.error(f"❌ ข ้ อ 1: ยังไม่ถูกต ้ อง (คุณตอบ '{u
+
+ans1}')")
+# ตรวจข ้ อ 2
+if u
+ans2 == "fish":
+
+st.success("✅ ข ้ อ 2: ถูกต ้ อง")
+score += 1
+else:
+st.error(f"❌ ข ้ อ 2: ยังไม่ถูกต ้ อง (คุณตอบ '{u
+
+ans2}')")
+# ✏ [พื้นที่สำาหรับนักเรียน]: เพิ่มตรวจข ้ อ 3, 4 ตรงนี้
+st.info(f"
+🏆 ได ้ คะแนนรวม: {score} คะแนน")
+if score == 2:
+st.success("🎉 You win!")
+else:
+st.error("💀 You lose!")
+# ----------------------------------------------------
+# 1. ปุ ่ มเริ่มเล่นเกม
+# ----------------------------------------------------
+st.button("🎮 เริ่มเล่นเกม"
+, on
+click=reset
+
+_game)
+# 2. แถบแสดงเวลานับถอยหลัง
+if "start" in st.session
+state and not st.session
+
+
+state.get("is
+ended"
+
+, False):
+time
+
+left = int(30 - (time.time() - st.session
+
+state.start))
+if time
+left > 0:
+
+st.error(f"⏳ เหลือเวลา: {time
+
+else:
+st.session
+state.is
+ended = True
+
+
+st.rerun()
+left} วินาที")
+st.divider()
+# 3. ช่องรับคำาตอบ (ใช ้ value ผูกกับตัวแปรตรงๆ เพื่อสั่งเคลียร์ได ้ )
+ans1 = st.text
+_
+input(
+"ข ้ อ 1: An
+`
+a
+l e
+`
+
+value=st.session
+state.ans1
+a day keeps the doctor away.
+🍎"
+val,
+,
+
+
+)
+ans2 = st.text
+
+input(
+"ข ้ อ 2: Cats love to eat `f
+_
+value=st.session
+state.ans2
+s h`
+.
+val,
+
+
+🐟"
+,
+)
+# อัปเดตค่าล่าสุดเข ้ าตัวแปร
+st.session
+state.ans1
+
+
+st.session
+state.ans2
+val = ans1
+val = ans2
+
+
+# ✏ [พื้นที่สำาหรับนักเรียน]: เพิ่มข ้ อ 3, 4 ตรงนี้
+# 4. ปุ ่ มส่งคำาตอบ
+if "start" in st.session
+state and not st.session
+
+if st.button("📥 ส่งคำาตอบ"):
+st.session
+state.is
+ended = True
+st.rerun()
+
+state.get("is
+ended"
+
+, False):
+time.sleep(1)
+st.rerun()
+# 5. แสดง Dialog ผลลัพธ์
+if st.session
+
+state.get("is
+ended", False):
+showresult
+
+
+dialog(ans1, ans2)
+st.divider()
+st.write("นางสาวดีใจ ยิ้มแย ้ ม เลขที่ 5 ม.4/5")
