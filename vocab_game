@@ -1,4 +1,7 @@
-กำาหนดค่าเริ่มต้นใน session
+import time
+import streamlit as st 
+
+กำหนดค่าเริ่มต้นใน session
 state ถ้ายังไม่มี
 
 if "ans1
