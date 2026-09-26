@@ -30,7 +30,7 @@ score = 0
 
 ans1 = st.text_input("ข้อ 1 นักเรัยนภาษาจีนคืออะไร")
 ans2 = st.text_input("ข้อ 2 คุณครูภาษาจีนคืออะไร")
-ans3 = st.text_input("ข้อ 3 โรงเรียนภาษาจีนคืออะไร"
+ans3 = st.text_input("ข้อ 3 โรงเรียนภาษาจีนคืออะไร")
 
 u_ans1 = ans1.strip().lower()
 u_ans2 = ans2.strip().lower()
