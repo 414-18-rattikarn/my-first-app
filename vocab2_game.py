@@ -24,7 +24,9 @@ def reset_game():
 @st.dialog("📊 สรุปผลการเล่นเกม")
 def show_result_dialog(ans1, ans2):
     st.balloons()
-    score = 0
+    
+score = 0
+
 ans1 = st.text_input("ข้อ 1")
 ans2 = st.text_input("ข้อ 2")
 ans3 = st.text_input("ข้อ 3")
@@ -35,29 +37,46 @@ u_ans2 = ans2.strip().lower()
 u_ans3 = ans3.strip().lower()
 u_ans4 = ans4.strip().lower()
 
-# ตรวจข ้ อ 1
+
+# ตรวจข้อ 1
 if u_ans1 == "apple":
-    st.success("✅ ข ้ อ 1: ถูกต ้ อง")
+    st.success("✅ ข้อ 1: ถูกต้อง")
     score += 1
 else:
-    st.error(f"❌ ข ้ อ 1: ยังไม่ถูกต ้ อง (คุณตอบ '{u_ans1}')")
+    st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
 
-# ตรวจข ้ อ 2
+
+# ตรวจข้อ 2
 if u_ans2 == "fish":
-    st.success("✅ ข ้ อ 2: ถูกต ้ อง")
+    st.success("✅ ข้อ 2: ถูกต้อง")
     score += 1
 else:
-    st.error(f"❌ ข ้ อ 2: ยังไม่ถูกต ้ อง (คุณตอบ '{u_ans2}')")
+    st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
 
-# ✏ [พื้นที่สำาหรับนักเรียน]: เพิ่มตรวจข ้ อ 3, 4 ตรงนี้
 
-st.info(f"🏆 ได ้ คะแนนรวม: {score} คะแนน")
+# ตรวจข้อ 3
+if u_ans3 == "คำตอบข้อ3":
+    st.success("✅ ข้อ 3: ถูกต้อง")
+    score += 1
+else:
+    st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
-if score == 2:
+
+# ตรวจข้อ 4
+if u_ans4 == "คำตอบข้อ4":
+    st.success("✅ ข้อ 4: ถูกต้อง")
+    score += 1
+else:
+    st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
+
+
+# แสดงคะแนน
+st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
+
+if score == 4:
     st.success("🎉 You win!")
 else:
     st.error("💀 You lose!")
-
 
 # ----------------------------------------------------
 # 1. ปุ ่ มเริ่มเล่นเกม
