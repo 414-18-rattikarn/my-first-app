@@ -25,9 +25,15 @@ def reset_game():
 def show_result_dialog(ans1, ans2):
     st.balloons()
     score = 0
+ans1 = st.text_input("ข้อ 1")
+ans2 = st.text_input("ข้อ 2")
+ans3 = st.text_input("ข้อ 3")
+ans4 = st.text_input("ข้อ 4")
 
 u_ans1 = ans1.strip().lower()
 u_ans2 = ans2.strip().lower()
+u_ans3 = ans3.strip().lower()
+u_ans4 = ans4.strip().lower()
 
 # ตรวจข ้ อ 1
 if u_ans1 == "apple":
