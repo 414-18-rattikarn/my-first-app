@@ -28,19 +28,17 @@ def show_result_dialog(ans1, ans2):
     
 score = 0
 
-ans1 = st.text_input("ข้อ 1")
-ans2 = st.text_input("ข้อ 2")
-ans3 = st.text_input("ข้อ 3")
-ans4 = st.text_input("ข้อ 4")
+ans1 = st.text_input("ข้อ 1 นักเรัยนภาษาจีนคืออะไร")
+ans2 = st.text_input("ข้อ 2 คุณครูภาษาจีนคืออะไร")
+ans3 = st.text_input("ข้อ 3 โรงเรียนภาษาจีนคืออะไร"
 
 u_ans1 = ans1.strip().lower()
 u_ans2 = ans2.strip().lower()
 u_ans3 = ans3.strip().lower()
-u_ans4 = ans4.strip().lower()
 
 
 # ตรวจข้อ 1
-if u_ans1 == "apple":
+if u_ans1 == "学生":
     st.success("✅ ข้อ 1: ถูกต้อง")
     score += 1
 else:
@@ -48,7 +46,7 @@ else:
 
 
 # ตรวจข้อ 2
-if u_ans2 == "fish":
+if u_ans2 == "老师":
     st.success("✅ ข้อ 2: ถูกต้อง")
     score += 1
 else:
@@ -56,7 +54,7 @@ else:
 
 
 # ตรวจข้อ 3
-if u_ans3 == "food":
+if u_ans3 == "学校":
     st.success("✅ ข้อ 3: ถูกต้อง")
 
 # ----------------------------------------------------
